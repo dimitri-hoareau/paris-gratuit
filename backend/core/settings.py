@@ -46,10 +46,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis', 
     'rest_framework',
+    'debug_toolbar',
+    'corsheaders',
+    'drf_spectacular',
     'places', 
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,4 +131,22 @@ STATIC_URL = 'static/'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 50,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # Vite (React dev server)
+    'http://localhost:3000',  # Autre port possible
+]
+
+# Django Debug Toolbar
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Paris Gratuit API',
+    'DESCRIPTION': 'API REST pour géolocaliser les lieux et services gratuits à Paris',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
