@@ -1,0 +1,13 @@
+@use "./styles/variables" as *;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+    display: flex;
+    background: $bg-secondary;
+  }
+}

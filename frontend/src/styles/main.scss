@@ -1,0 +1,59 @@
+// ============================================
+// PARIS GRATUIT - STYLES PRINCIPAUX
+// ============================================
+
+// 1. Variables & Mixins
+@use "variables";
+@use "mixins";
+
+// 2. Reset CSS
+@use "reset";
+
+// ============================================
+// STYLES GLOBAUX
+// ============================================
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ============================================
+// UTILITAIRES
+// ============================================
+
+.container {
+  width: 100%;
+  max-width: variables.$wide;
+  margin: 0 auto;
+  padding: 0 variables.$spacing-md;
+
+  @include mixins.tablet {
+    padding: 0 variables.$spacing-lg;
+  }
+}
+
+// ============================================
+// ACCESSIBILITÉ
+// ============================================
+
+.sr-only {
+  @include mixins.visually-hidden;
+}
+
+// Skip link pour navigation clavier
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: variables.$primary;
+  color: variables.$text-white;
+  padding: variables.$spacing-sm variables.$spacing-md;
+  text-decoration: none;
+  z-index: variables.$z-toast;
+
+  &:focus {
+    top: 0;
+  }
+}

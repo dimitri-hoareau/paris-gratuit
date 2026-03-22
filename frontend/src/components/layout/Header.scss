@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  background: $primary;
+  color: $text-white;
+  padding: $spacing-md;
+  box-shadow: $shadow-md;
+
+  &__container {
+    max-width: $wide;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $text-2xl;
+    font-weight: $font-bold;
+    margin-bottom: $spacing-xs;
+
+    @include tablet {
+      font-size: $text-3xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $text-sm;
+    opacity: 0.9;
+
+    @include tablet {
+      font-size: $text-base;
+    }
+  }
+}
