@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+
+.map {
+  flex: 1;
+  position: relative;
+
+  &__container {
+    height: 100%;
+    width: 100%;
+  }
+}

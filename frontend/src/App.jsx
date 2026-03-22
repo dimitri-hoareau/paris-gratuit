@@ -1,4 +1,5 @@
 import Header from "./components/layout/Header";
+import Map from "./components/map/Map";
 import "./App.scss";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <Header />
 
       <main className="app__main">
-        <p>La carte Leaflet ira ici</p>
+        <Map />
       </main>
     </div>
   );
